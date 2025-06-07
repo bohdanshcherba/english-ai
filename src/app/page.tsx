@@ -27,6 +27,7 @@ import { useForm } from 'react-hook-form';
  */
 
 const Page = () => {
+  const [previousAnswers, setPreviousAnswers] = useState<string>('');
   const [preferences, setPreferences] = useState<UserPreferences>(defaultPreferences);
   const [response, setResponse] = useState<AIResponse | null>(null);
   const mutation = useMutation({
@@ -53,6 +54,7 @@ const Page = () => {
         textLength: preferences.textLength
       })
     );
+    setPreviousAnswers(values.answer || '');
   };
 
   useEffect(() => {
@@ -132,6 +134,10 @@ const Page = () => {
                 <Highlight>Correct answer:</Highlight>
                 <br />
                 {response?.correctAnswer}
+                <br />
+                <Highlight>Your answer:</Highlight>
+                <br />
+                {previousAnswers}
               </Body>
             </div>
           )}

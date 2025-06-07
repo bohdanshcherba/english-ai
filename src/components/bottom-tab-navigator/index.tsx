@@ -4,11 +4,11 @@ import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { Button } from '@/registry/new-york-v4/ui/button';
 
-import { Home, ListTodo } from 'lucide-react';
+import { Home, ListTodo, SquarePen } from 'lucide-react';
 
 const tabs = [
   {
-    icon: Home,
+    icon: SquarePen,
     href: '/'
   },
   {
