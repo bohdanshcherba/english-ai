@@ -7,3 +7,13 @@ export type AIResponse = {
     expectedEnglish: string;
   };
 };
+
+export type AIQuizResponse = {
+  score: number;
+  feedback: string;
+  correctAnswer: string;
+  nextTask: {
+    question: string;
+    options: string[];
+  };
+};
